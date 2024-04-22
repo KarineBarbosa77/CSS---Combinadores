@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+    min-height: 100vh;
+    background-color: ghostwhite;
+}
+.menu-navegacao {
+    height: 65px;
+    background-color: #38393C;
+}
+
+.menu-navegacao>ul {  /*Combinator de filho*/
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-navegacao a {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    color: ghostwhite;
+    text-transform: uppercase; /*Vai deixar as letras maiusculas*/
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem; /*120% do tamanho padrao*/
+    padding: 0 1rem;
+}   /*O espaço entre .menu-navegacao e a ancora(a) significa descendente*/
+
+.menu-navegacao a:hover { /*Pseudoclasse, o cursor vai virar um pointer*/
+    cursor: pointer;
+    background-color: ghostwhite;
+    color: #38393C;
+    transition-duration: 300ms;
+}
+
+.breadcrumbs>ul {
+    height: 100%;
+    display: flex;
+    margin-inline-start: 1.5rem; /*Começo da margem*/
+}
+
+.breadcrumbs li {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+.breadcrumbs:not(:last-child)::after{
+    content: ">";
+} /*Aplica para todo elemento*/
+.breadcrumbs li::not(:last-child)>a {
+    color: #777;
+}/* aplica para todo <a> filho de <li>, menos (não) para o <a> filho do <li> que é o último filho, descendente de .breadcrumbs */
+
+.breadcrumbs a {
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0 1rem;
+}
+
+.breadcrumbs li:last-child>a{
+    background-color: #38393C;
+    color: ghostwhite;
+    padding: 8px;
+    border-radius: 16px;
+    margin-inline-start: 8px;
+
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
